@@ -18,6 +18,7 @@ class Batch::GetArticles
                 if article['title'] != nil
                     article['category_id'] = category.id
                     #未登録の記事かどうか
+                    puts "--------------------------------------------------------------------------------------"
                     if has_article?(article['link']) 
                         puts "未登録記事です"                        
                         puts "title #{article['title']}"
