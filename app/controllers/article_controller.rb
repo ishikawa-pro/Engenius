@@ -1,11 +1,18 @@
 class ArticleController < ApplicationController
     def index
-        #render text: 'index'
-        created_data = Article.maximum('created_at')
-        @articles = Article.where(created_at: created_data).select(:title, :link, :post_date, :image_url, :category_id)
+        #render text: 'index'        
+        @articles = Article.select(:title, :link, :post_date,
+                                   :image_url, :category_id)
+                            .order(post_date: :desc)
+                            .offset(params['offset']).limit(params['limit'])
     end
 
     def show
-        render text: 'show'
+        @articles = Article.select(:title, :link, :post_date, :image_url,
+                                   :category_id)
+                    .joins(:category)
+                    .merge(Category.where(category: params['category']))
+                    .order(post_date: :desc)
+                    .offset(params['offset']).limit(params['limit'])
     end
 end
