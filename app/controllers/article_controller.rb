@@ -15,4 +15,8 @@ class ArticleController < ApplicationController
                     .order(post_date: :desc)
                     .offset(params['offset']).limit(params['limit'])
     end
+
+    def categories
+        @articles = Category.select(:category)
+    end
 end
