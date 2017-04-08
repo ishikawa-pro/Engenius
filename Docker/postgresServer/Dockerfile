@@ -8,7 +8,9 @@ RUN apt-get update && \
 USER postgres
 #RUN mkdir ~/pgsql
 #RUN /usr/lib/postgresql/9.5/bin/initdb -D ~/pgsql
-RUN /etc/init.d/postgresql start &&\
+RUN rm -rf /var/lib/postgresql/9.5/main/* &&\
+    /usr/lib/postgresql/9.5/bin/initdb -E UTF-8 -D /var/lib/postgresql/9.5/main/ &&\
+    /etc/init.d/postgresql start &&\
     psql --command "CREATE ROLE engenius LOGIN CREATEDB PASSWORD 'engenius';" &&\ 
     echo "local all  postgres                      peer" >> /etc/postgresql/9.5/main/pg_hba.conf &&\
     echo "local all  all                           trust" >> /etc/postgresql/9.5/main/pg_hba.conf &&\
