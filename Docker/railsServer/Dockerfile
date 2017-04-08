@@ -9,7 +9,7 @@ RUN gem install pg &&\
 WORKDIR /usr/src/engenius
 COPY ./engenius/Gemfile* ./
 RUN bundle install
-COPY engenius ./
+COPY ./engenius ./
 
 
 EXPOSE 3000

@@ -32147,3 +32147,132 @@ Processing by ArticleController#show as JSON
 Completed 200 OK in 259ms (Views: 171.1ms | ActiveRecord: 11.6ms)
 
 
+Started GET "/article/categories.json" for 172.18.0.1 at 2017-04-04 12:41:18 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticleController#categories as JSON
+  Rendering article/categories.json.jbuilder
+  [1m[36mCategory Load (2.8ms)[0m  [1m[34mSELECT "categories"."category" FROM "categories"[0m
+  Rendered article/categories.json.jbuilder (54.8ms)
+Completed 200 OK in 186ms (Views: 95.3ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/article/show.json?category=Docker&limit=7" for 172.18.0.1 at 2017-04-04 12:41:19 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticleController#show as JSON
+  Parameters: {"category"=>"Docker", "limit"=>"7"}
+  Rendering article/show.json.jbuilder
+  [1m[36mArticle Load (9.0ms)[0m  [1m[34mSELECT  "articles"."title", "articles"."link", "articles"."post_date", "articles"."image_url", "articles"."category_id" FROM "articles" INNER JOIN "categories" ON "categories"."id" = "articles"."category_id" WHERE "categories"."category" = $1 ORDER BY "articles"."post_date" DESC LIMIT $2[0m  [["category", "Docker"], ["LIMIT", 7]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered article/show.json.jbuilder (159.0ms)
+Completed 200 OK in 295ms (Views: 196.5ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/article/show.json?category=Ruby%20on%20Rails&limit=7" for 172.18.0.1 at 2017-04-04 12:41:32 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticleController#show as JSON
+  Parameters: {"category"=>"Ruby on Rails", "limit"=>"7"}
+  Rendering article/show.json.jbuilder
+  [1m[36mArticle Load (0.8ms)[0m  [1m[34mSELECT  "articles"."title", "articles"."link", "articles"."post_date", "articles"."image_url", "articles"."category_id" FROM "articles" INNER JOIN "categories" ON "categories"."id" = "articles"."category_id" WHERE "categories"."category" = $1 ORDER BY "articles"."post_date" DESC LIMIT $2[0m  [["category", "Ruby on Rails"], ["LIMIT", 7]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  Rendered article/show.json.jbuilder (20.1ms)
+Completed 200 OK in 85ms (Views: 67.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/article/show.json?category=Ruby%20on%20Rails&limit=7&offset=7" for 172.18.0.1 at 2017-04-04 12:41:34 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticleController#show as JSON
+  Parameters: {"category"=>"Ruby on Rails", "limit"=>"7", "offset"=>"7"}
+  Rendering article/show.json.jbuilder
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles"."title", "articles"."link", "articles"."post_date", "articles"."image_url", "articles"."category_id" FROM "articles" INNER JOIN "categories" ON "categories"."id" = "articles"."category_id" WHERE "categories"."category" = $1 ORDER BY "articles"."post_date" DESC LIMIT $2 OFFSET $3[0m  [["category", "Ruby on Rails"], ["LIMIT", 7], ["OFFSET", 7]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  Rendered article/show.json.jbuilder (25.0ms)
+Completed 200 OK in 85ms (Views: 65.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/article/show.json?category=Ruby%20on%20Rails&limit=7&offset=14" for 172.18.0.1 at 2017-04-04 12:41:35 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticleController#show as JSON
+  Parameters: {"category"=>"Ruby on Rails", "limit"=>"7", "offset"=>"14"}
+  Rendering article/show.json.jbuilder
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles"."title", "articles"."link", "articles"."post_date", "articles"."image_url", "articles"."category_id" FROM "articles" INNER JOIN "categories" ON "categories"."id" = "articles"."category_id" WHERE "categories"."category" = $1 ORDER BY "articles"."post_date" DESC LIMIT $2 OFFSET $3[0m  [["category", "Ruby on Rails"], ["LIMIT", 7], ["OFFSET", 14]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 12421739], ["LIMIT", 1]]
+  Rendered article/show.json.jbuilder (22.7ms)
+Completed 200 OK in 89ms (Views: 62.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/article/show.json?category=%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92&limit=7" for 172.18.0.1 at 2017-04-04 12:41:36 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticleController#show as JSON
+  Parameters: {"category"=>"機械学習", "limit"=>"7"}
+  Rendering article/show.json.jbuilder
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  "articles"."title", "articles"."link", "articles"."post_date", "articles"."image_url", "articles"."category_id" FROM "articles" INNER JOIN "categories" ON "categories"."id" = "articles"."category_id" WHERE "categories"."category" = $1 ORDER BY "articles"."post_date" DESC LIMIT $2[0m  [["category", "機械学習"], ["LIMIT", 7]]
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  Rendered article/show.json.jbuilder (30.8ms)
+Completed 200 OK in 100ms (Views: 82.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/article/show.json?category=%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92&limit=7&offset=7" for 172.18.0.1 at 2017-04-04 12:41:37 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticleController#show as JSON
+  Parameters: {"category"=>"機械学習", "limit"=>"7", "offset"=>"7"}
+  Rendering article/show.json.jbuilder
+  [1m[36mArticle Load (1.8ms)[0m  [1m[34mSELECT  "articles"."title", "articles"."link", "articles"."post_date", "articles"."image_url", "articles"."category_id" FROM "articles" INNER JOIN "categories" ON "categories"."id" = "articles"."category_id" WHERE "categories"."category" = $1 ORDER BY "articles"."post_date" DESC LIMIT $2 OFFSET $3[0m  [["category", "機械学習"], ["LIMIT", 7], ["OFFSET", 7]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  Rendered article/show.json.jbuilder (30.1ms)
+Completed 200 OK in 130ms (Views: 101.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/article/show.json?category=%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92&limit=7&offset=14" for 172.18.0.1 at 2017-04-04 12:41:38 +0000
+Cannot render console from 172.18.0.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticleController#show as JSON
+  Parameters: {"category"=>"機械学習", "limit"=>"7", "offset"=>"14"}
+  Rendering article/show.json.jbuilder
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT  "articles"."title", "articles"."link", "articles"."post_date", "articles"."image_url", "articles"."category_id" FROM "articles" INNER JOIN "categories" ON "categories"."id" = "articles"."category_id" WHERE "categories"."category" = $1 ORDER BY "articles"."post_date" DESC LIMIT $2 OFFSET $3[0m  [["category", "機械学習"], ["LIMIT", 7], ["OFFSET", 14]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 113629430], ["LIMIT", 1]]
+  Rendered article/show.json.jbuilder (24.1ms)
+Completed 200 OK in 91ms (Views: 70.1ms | ActiveRecord: 2.0ms)
+
+
