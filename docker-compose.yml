@@ -2,23 +2,23 @@ version: '2'
 
 services:
   db: 
-    image: postgres9.3
+    image: ishikawa314159/postgres9.5:engenius
     ports:
       - "5432:5432"
     volumes_from:
-      - container:postgres-data
+      - container:EgDataContainer
     container_name: postgres
   web:
-    image: engenius
+    image: ishikawa314159/engenius
     ports:
       - "3000:3000"
     links:
       - db:postgres
     volumes:
-      - ~/Documents/docker/engenius/engenius/rails:/usr/src/engenius
+      - ~/Documents/docker/engenius/engenius/Docker/railsServer/engenius/:/usr/src/engenius
     environment:
-      - ENGENIUS_DATABASE_USERNAME=user01
-      - ENGENIUS_DATABASE_PASSWORD=0519akira
+      - ENGENIUS_DATABASE_USERNAME=engenius
+      - ENGENIUS_DATABASE_PASSWORD=engenius
     container_name: engenius
     stdin_open: true
     tty: true
