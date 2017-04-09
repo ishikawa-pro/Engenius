@@ -65,39 +65,14 @@ APIの仕様について
     ```JSON
 	[
     {
-        "title": "Docker上のRedashのデータをなくしてから復旧するまでの全記録 - Kuchitama Tech Note",
-        "link": "http://kuchitama.hateblo.jp/entry/redash_on_docker_trouble",
-        "post_date": "2017-04-05",
-        "image_url": "https://cdn-ak.f.st-hatena.com/images/fotolife/k/kuchitama/20170405/20170405144512.png",
-        "category": "Docker"
+        "title": "記事のタイトル",
+        "link": "記事のURL",
+        "post_date": "投稿された日",
+        "image_url": "サムネイルのURL（ない場合は""）",
+        "category": "カテゴリ"
     },
-    {
-        "title": "[小ネタ] Docker for Mac のデータを縮小する（Docker.qcow2 の肥大化対策） | Developers.IO",
-        "link": "http://dev.classmethod.jp/server-side/docker-server-side/docker-for-mac-shrink-image/",
-        "post_date": "2017-04-03",
-        "image_url": "http://cdn.dev.classmethod.jp/wp-content/uploads/2013/11/docker-320x320.png",
-        "category": "Docker"
-    },
-    {
-        "title": "JAWS-UG ECS Best Practice",
-        "link": "http://www.slideshare.net/sudoyu/jawsug-ecs-best-practice",
-        "post_date": "2017-03-31",
-        "image_url": "https://cdn.slidesharecdn.com/ss_thumbnails/jaws-ugecsbestpractice-170330115536-thumbnail-4.jpg?cb=1490875438",
-        "category": "Docker"
-    },
-    {
-        "title": "Pythonで動かして学ぶ機械学習入門_予測モデルを作ってみよう",
-        "link": "http://www.slideshare.net/ssuserb5817c/python-66169435",
-        "post_date": "2017-03-31",
-        "image_url": "https://cdn.slidesharecdn.com/ss_thumbnails/python1-160919131530-thumbnail-4.jpg?cb=1475043138",
-        "category": "機械学習"
-    },
-    {
-        "title": "DockerとDocker Hubの操作と概念",
-        "link": "http://www.slideshare.net/zembutsu/docker-container-image-command-introduction-2017-03",
-        "post_date": "2017-03-31",
-        "image_url": "https://cdn.slidesharecdn.com/ss_thumbnails/dockercontainerimagecommandintroduction2017-03-170331100320-thumbnail-4.jpg?cb=1491404717",
-        "category": "Docker"
-    }
+    .
+    .
+    .
 ]
 	``` 
