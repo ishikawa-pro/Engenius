@@ -8,6 +8,8 @@ Engineer + Genius = Engeniusです笑
  最終的には機械学習などを利用して、人気のある記事をスクレイピングしていく仕様
 にしていきたいです。  
 
+iOS用のクライアントアプリはこちら  
+https://github.com/ishikawa-pro/Engenius_client
 ## Description
 * Rubyを使って各キーワード毎に、はてなブックマークで検索し一定以上のブックマー
 ク数の記事を日付順にソートしてスクレイピングしています。  
@@ -16,6 +18,7 @@ ex) Docker: http://b.hatena.ne.jp/search/text?safe=on&q=Docker&users=50
 ## Setup
 Engeniusのサーバーを利用する前のセットアップの方法についてです。Makefileを使ってセットアップしていくようにしてい
 ます。  
+✳︎ Dockerが動く状態になっていることが前提です。  
 ### コンテナの作成
 RailsとPostgreSQLのコンテナを作成します。Railsのバージョンは5、PostgreSQLは9.5を利用しています。  
 PostgreSQLはデータボリュームコンテナを作成してデータを永続化するようにしています。
@@ -36,7 +39,23 @@ PostgreSQLはデータボリュームコンテナを作成してデータを永�
 ### データの取得
 新しいデータを取得する際は、コンテナが起動していない場合は、  
 `make get_data`  
-コンテナが起動している場合は、
+コンテナが起動している場合は、  
 `docker-compose exec web bundle exec rails runner Batch::GetArticles.get_articles`  
 で、スクレイピングが始まります。
-
+## Usage
+### サーバーの起動
+サーバーの立ち上げ方についてです。  
+まず、コンテナを立ち上げます。  
+`docker-compose up -d`  
+railsコンテナのrails サーバーを立ち上げます。  
+`docker-compose exec web rails s -b 0.0.0.0`  
+これで、サーバーが動き始めましす。
+### APIリファレンス
+APIの仕様について
+####[GET]最新記事一覧
+カテゴリに関係なく、執筆日の新しい順に記事の情報を返します。
+##### Request URL  
+`http://localhost:3000/article.json[?limit][&offset]`  
+##### Requset parameters
+|**limit** |何個の記事の情報を取得するかを指定できます。|
+|**offset**|記事の情報を上から何個飛ばすか指定できます。|
