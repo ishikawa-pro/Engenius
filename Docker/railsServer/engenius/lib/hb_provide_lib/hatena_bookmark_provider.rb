@@ -55,10 +55,11 @@ class Hb_provide_lib::Hatena_bookmark_provider
             @article["post_date"] = doc.css('div').css('blockquote').css('span')[0].text
             #収集先のhtmlを取得
             self.get_ogp(doc.css('h3').css('a').attribute('href').value)
-            if @article['title'] == nil
+            if @article['title'] == nil || @article['link'] == nil
                 #title
                 @article["title"] = doc.css('h3').css('a').attribute('title').value
                 #url
+                puts "link: #{doc.css('h3').css('a').attribute('href').value}"
                 @article["link"] = doc.css('h3').css('a').attribute('href').value
             end
         end
