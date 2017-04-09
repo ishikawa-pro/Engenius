@@ -52,7 +52,7 @@ railsコンテナのrails サーバーを立ち上げます。
 これで、サーバーが動き始めましす。
 ### APIリファレンス
 APIの仕様について  
-#### [GET]最新記事一覧  
+* **[GET]最新記事一覧**
 カテゴリに関係なく、執筆日の新しい順に記事の情報を返します。  
 ##### Request URL  
 `http://localhost:3000/article.json[?limit][&offset]`  
