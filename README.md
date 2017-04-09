@@ -1,3 +1,6 @@
 # Engenius server
----
-技術ブログを適当にキュレーションするアプリを作りたい
+Engeniusという技術ブログのニュースアプリのサーバーサイドです。
+名前は技術者(Engineer)の賢い(Genius)情報収集アプリを目指しているので、
+Engineer + Genius = Engeniusです笑
+## Description
+
