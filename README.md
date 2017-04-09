@@ -56,12 +56,12 @@ APIの仕様について
     カテゴリに関係なく、執筆日の新しい順に記事の情報を返します。  
     ##### Request URL  
     `http://localhost:3000/article.json[?limit][&offset]`  
-    ##### Requset parameters
-    |param|Description|
+    ##### Request parameters
+    |param|description|
     |---|---|
-    |limit |何個の記事の情報を取得するかを指定できます。|  
-    |offset|記事の情報を上から何個飛ばすか指定できます。|  
-    #### Response
+    |limit(option) |何個の記事の情報を取得するかを指定できます。(指定しない場合全ての記事を返します)|
+    |offset(option)|記事の情報を上から何個飛ばすか指定できます。|  
+    #### Response(JSON)
     ```
 	[
     {
@@ -76,3 +76,28 @@ APIの仕様について
                     :
     ]
 	``` 
+* **[GET]特定のカテゴリの記事を取得**  
+    指定したカテゴリの記事を新しい順に返します。  
+    ##### request URL  
+    `http://localhost:3000/article/show.josn[?category][&limit][&offset]`  
+    ##### Request parameters  
+    |param|description|
+    |---|---|
+    |category(require)|カテゴリを指定します。|
+    |limit(option) |何個の記事の情報を取得するかを指定できます。(指定しない場合全ての記事を返します)|
+    |offset(option)|記事の情報を上から何個飛ばすか指定できます。|  
+    ##### Response(JSON)
+    ```
+	[
+	{                                                      
+	    "title": "記事のタイトル",
+	    "link": "記事のURL",
+	    "post_date": "投稿された日",
+	    "image_url": "サムネイルのURL（ない場合は""）",
+	    "category": "カテゴリ"
+	},
+	                :
+	                :
+	                :
+	]
+    ```
