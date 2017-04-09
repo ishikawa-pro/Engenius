@@ -27,3 +27,16 @@ PostgreSQLはデータボリュームコンテナを作成してデータを永�
 を編集してください。  
 コンテナの作成はMakefileのある場所で以下のコマンドを叩いてください。  
 `make build_containers`  
+### データベースの作成とデータの流し込み
+データベースの作成とデータの流し込みを行います。以下のコマンド一発で全て行われます。  
+'make setup_database'  
+データの流し込みは、最初にseeds.rbでデータベースにスクレイピングするキーワードとスクレイピング先のURLを登録します。
+次に、Categoryテーブルに登録したカテゴリのデータを元にスクレイピングをしていきます。スクレイピングのバッチファイル
+は、`Docker/railsServer/engenius/lib`内にある、`batch`と`hb_provide_lib`にあります。  
+### データの取得
+新しいデータを取得する際は、コンテナが起動していない場合は、  
+`make get_data`  
+コンテナが起動している場合は、
+`docker-compose exec web bundle exec rails runner Batch::GetArticles.get_articles`  
+で、スクレイピングが始まります。
+
