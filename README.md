@@ -57,5 +57,6 @@ APIの仕様について
 ##### Request URL  
 `http://localhost:3000/article.json[?limit][&offset]`  
 ##### Requset parameters
-|**limit** |何個の記事の情報を取得するかを指定できます。|
-|**offset**|記事の情報を上から何個飛ばすか指定できます。|
+|**limit** |何個の記事の情報を取得するかを指定できます。|  
+|---|---|
+|**offset**|記事の情報を上から何個飛ばすか指定できます。|  
