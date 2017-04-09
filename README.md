@@ -21,6 +21,9 @@ RailsとPostgreSQLのコンテナを作成します。Railsのバージョンは
 PostgreSQLはデータボリュームコンテナを作成してデータを永続化するようにしています。
 データベースのユーザーとパスワードは、  
 `User: engenius, password: engenius`  
-です。  
+です。変更する場合は、  
+`Docker/postgresServer/Dockerfile`の中程にある、  
+`    psql --command "CREATE ROLE engenius LOGIN CREATEDB PASSWORD 'engenius';" &&\`  
+を編集してください。  
+コンテナの作成はMakefileのある場所で以下のコマンドを叩いてください。  
 `make build_containers`  
-
