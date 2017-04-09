@@ -101,8 +101,10 @@ APIの仕様について
 	                :
 	]
     ```
-* **[GET]カテゴリの取得**  
+* **[GET]カテゴリーリストの取得**  
     カテゴリのリストを返します。  
+    ##### request URL  
+    `http://localhost:3000/article/categories.json`
     ##### Request parameters  
 	なし  
     ##### Response(JSON)  
