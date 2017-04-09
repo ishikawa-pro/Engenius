@@ -7,9 +7,20 @@ Engineer + Genius = Engeniusです笑
 
  最終的には機械学習などを利用して、人気のある記事をスクレイピングしていく仕様
 にしていきたいです。  
+
 ## Description
 * Rubyを使って各キーワード毎に、はてなブックマークで検索し一定以上のブックマー
 ク数の記事を日付順にソートしてスクレイピングしています。  
 ex) Docker: http://b.hatena.ne.jp/search/text?safe=on&q=Docker&users=50  
 * バックエンドはRailsとPostgreSQLを利用しており、全てDockerで管理しています。
+## Setup
+Engeniusのサーバーを利用する前のセットアップの方法についてです。Makefileを使ってセットアップしていくようにしてい
+ます。  
+### コンテナの作成
+RailsとPostgreSQLのコンテナを作成します。Railsのバージョンは5、PostgreSQLは9.5を利用しています。  
+PostgreSQLはデータボリュームコンテナを作成してデータを永続化するようにしています。
+データベースのユーザーとパスワードは、  
+`User: engenius, password: engenius`  
+です。  
+`make build_containers`  
 
