@@ -9,8 +9,8 @@ default: &default
   pool: 5
   timeout: 5000
   encoding: UTF-8 
-  username: <%= ENV['ENGENIUS_DATABASE_USERNAME'] %>
-  password: <%= ENV['ENGENIUS_DATABASE_PASSWORD'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
   host: db 
 
 development:
