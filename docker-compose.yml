@@ -13,12 +13,16 @@ services:
       - egdb:/var/lib/postgresql/data
     container_name: EGpostgres
   web:
+    build: .
     image: 666552473144.dkr.ecr.ap-northeast-1.amazonaws.com/engenius/repo:latest
     ports:
       - "3000:3000"
     env_file: .env
     links:
       - db:postgres
+    volumes:
+      - ./engenius/:/usr/src/engenius/
+      - ./script:/usr/src/engenius/script
     container_name: engenius
     stdin_open: true
     tty: true
