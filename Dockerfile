@@ -9,6 +9,7 @@ RUN gem install pg &&\
 WORKDIR /usr/src/engenius
 COPY ./engenius/Gemfile* ./
 RUN bundle install
-COPY ./engenius ./
+COPY ./engenius/* /usr/src/engenius/
+COPY ./script/entrypoint.sh /usr/src/engenius/
 
-ENTRYPOINT ["rails", "s", "-b", "0.0.0.0"]
+ENTRYPOINT ["./script/entrypoint.sh"]
