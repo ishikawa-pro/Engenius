@@ -5,20 +5,20 @@ volumes:
       driver: 'local'
 services:
   db: 
-    image: postgres
+    image: library/postgres
     ports:
       - "5432:5432"
+    env_file: .env
     volumes:
-      - egdb:/var/lib/postgresql/data/pgdata
+      - egdb:/var/lib/postgresql/data
+    container_name: EGpostgres
   web:
     image: 666552473144.dkr.ecr.ap-northeast-1.amazonaws.com/engenius/repo:latest
     ports:
       - "3000:3000"
+    env_file: .env
     links:
       - db:postgres
-    environment:
-      - ENGENIUS_DATABASE_USERNAME=engenius
-      - ENGENIUS_DATABASE_PASSWORD=engenius
     container_name: engenius
     stdin_open: true
     tty: true
