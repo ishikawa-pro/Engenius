@@ -11,5 +11,4 @@ COPY ./engenius/Gemfile* ./
 RUN bundle install
 COPY ./engenius ./
 
-
-EXPOSE 3000
+ENTRYPOINT ["rails", "s", "-b", "0.0.0.0"]
