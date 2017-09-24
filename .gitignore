@@ -41,3 +41,6 @@ bower.json
 .byebug_history
 
 **/.DS_Store
+
+engenius/tmp/pids/ 
+engenius/log/development.log
