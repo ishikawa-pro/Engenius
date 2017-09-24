@@ -1,15 +1,17 @@
 version: '2'
 
+volumes:
+  egdb:
+      driver: 'local'
 services:
   db: 
-    image: ishikawa314159/postgres9.5:engenius
+    image: postgres
     ports:
       - "5432:5432"
-    volumes_from:
-      - container:EgDataContainer
-    container_name: postgres
+    volumes:
+      - egdb:/var/lib/postgresql/data/pgdata
   web:
-    image: ishikawa314159/engenius
+    image: 666552473144.dkr.ecr.ap-northeast-1.amazonaws.com/engenius/repo:latest
     ports:
       - "3000:3000"
     links:
