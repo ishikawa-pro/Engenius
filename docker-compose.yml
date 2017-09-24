@@ -16,8 +16,6 @@ services:
       - "3000:3000"
     links:
       - db:postgres
-    volumes:
-      - ~/Documents/docker/engenius/engenius/Docker/railsServer/engenius/:/usr/src/engenius
     environment:
       - ENGENIUS_DATABASE_USERNAME=engenius
       - ENGENIUS_DATABASE_PASSWORD=engenius
