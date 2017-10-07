@@ -24,5 +24,6 @@ services:
       - ./engenius/:/usr/src/engenius/
       - ./script:/usr/src/engenius/script
     container_name: engenius
+    restart: on-failure
     stdin_open: true
     tty: true
