@@ -11,6 +11,6 @@ else
     #コンテナを落とすと、server.pidが残って次回正常にserverが立たないため
     rm tmp/pids/server.pid
 fi
-rails s -d -b 0.0.0.0
 
-bundle exec rails runner Batch::GetArticles.get_articles
+bundle exec rails runner Batch::GetArticles.get_articles &
+rails s -b 0.0.0.0
