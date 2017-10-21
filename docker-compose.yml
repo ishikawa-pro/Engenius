@@ -22,7 +22,6 @@ services:
       - db:postgres
     volumes:
       - ./engenius/:/usr/src/engenius/
-      - ./script/entrypoint.sh:/usr/src/engenius/entrypoint.sh
     container_name: engenius
     restart: on-failure
     stdin_open: true
