@@ -4,7 +4,7 @@ MAINTAINER akira
 WORKDIR /usr/src/engenius
 COPY ./engenius/Gemfile* ./
 RUN bundle install
-COPY ./engenius/* /usr/src/engenius/
-COPY ./script/entrypoint.sh /usr/src/engenius/
+COPY ./engenius ./
+COPY ./script/entrypoint.sh ./
 
-ENTRYPOINT ["./script/entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
