@@ -8,7 +8,13 @@ module Hb_provide_lib::HTML_provide_module
         #proxy環境下の場合
         #agent.set_proxy('192.168.10.30', 8080)
         #Mechanizeでhtml情報を取得してnokogiriに渡した値を返す
-        return Nokogiri::HTML(agent.get(url).content.toutf8)
+        begin
+            response = agent.get(url)
+            return Nokogiri::HTML(response.content.toutf8)
+        rescue => e
+            p e.message
+            return nil
+        end
     end
     module_function :get_html
     
