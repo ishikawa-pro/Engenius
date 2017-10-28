@@ -15,6 +15,8 @@ class Batch::GetArticles
             while hb_provider.has_next?
                 article = hb_provider.next_item
                 #記事以外のデータが混じるため、titleの有無でフィルタリング
+                next if article.nil?
+
                 if article['title'] != nil
                     article['category_id'] = category.id
                     #未登録の記事かどうか
