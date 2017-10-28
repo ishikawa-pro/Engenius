@@ -30,6 +30,10 @@ class Hb_provide_lib::Hatena_bookmark_provider
     def get_ogp(url)
         #targetをnokogiriへ渡す
         doc = Hb_provide_lib::HTML_provide_module.get_html(url) 
+        if doc.nil?
+            puts "エラーが発生したためスキップします"
+            return false 
+        end
         #metaタグからogpの内容を収集
         doc.css('meta').each do |meta|
             #title
@@ -40,9 +44,10 @@ class Hb_provide_lib::Hatena_bookmark_provider
                 @article["link"] = meta.attribute('content').to_s
             #image
             elsif meta.attribute('property').to_s == "og:image"
-                @article["image_url"] = meta.attribute('content').to_s                
-            end            
+                @article["image_url"] = meta.attribute('content').to_s 
+            end
         end
+        return true
     end
     protected :get_ogp
 
