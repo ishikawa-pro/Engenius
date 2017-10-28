@@ -58,8 +58,10 @@ class Hb_provide_lib::Hatena_bookmark_provider
         if  doc.css('h3').css('a').text != "" && doc.css('p').text == ""
             #日付を格納
             @article["post_date"] = doc.css('div').css('blockquote').css('span')[0].text
+            #記事のスクレイピングに失敗したらreturn
+            return nil unless self.get_ogp(doc.css('h3').css('a').attribute('href').value)
+
             #収集先のhtmlを取得
-            self.get_ogp(doc.css('h3').css('a').attribute('href').value)
             if @article['title'] == nil || @article['link'] == nil
                 #title
                 @article["title"] = doc.css('h3').css('a').attribute('title').value
