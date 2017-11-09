@@ -17,6 +17,6 @@ class ArticleController < ApplicationController
     end
 
     def categories
-        @articles = Category.select(:category)
+        @categories = Category.select(:category)
     end
 end
