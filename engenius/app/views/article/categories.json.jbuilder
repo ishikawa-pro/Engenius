@@ -1,3 +1,5 @@
-json.array!(@articles) do |article|
-    json.category article.category
+category = []
+@categories.each do |elem|
+    category.push(elem.category)
 end
+json.categories category
