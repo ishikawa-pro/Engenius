@@ -8,11 +8,11 @@ class ArticleController < ApplicationController
     end
 
     def show
-        @articles = Article.select(:title, :link, :post_date, :image_url,
-                                   :category_id)
-                    .joins(:category)
-                    .merge(Category.where(category: params['category']))
-                    .order(post_date: :desc)
-                    .offset(params['offset']).limit(params['limit'])
+        @articles = Category.joins(:articles)
+                    .select("categories.category, articles.*")
+                    .where(category: params['category'])
+                    .order("articles.post_date desc")
+                    .offset(params['offset'])
+                    .limit(params['limit'])
     end
 end
