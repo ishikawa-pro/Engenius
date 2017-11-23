@@ -4,7 +4,7 @@ class ArticleController < ApplicationController
         @articles = Category.joins(:articles)
                     .select("categories.category, articles.*")
                     .where(category: params['category'])
-                    .order("articles.post_date desc")
+                    .order("articles.post_date desc, id")
                     .offset(params['offset'])
                     .limit(params['limit'])
     end
@@ -13,7 +13,7 @@ class ArticleController < ApplicationController
         @articles = Category.joins(:articles)
                     .select("categories.category, articles.*")
                     .where(category: params['category'])
-                    .order("articles.post_date desc")
+                    .order("articles.post_date desc, id")
                     .offset(params['offset'])
                     .limit(params['limit'])
     end
