@@ -1,5 +1,8 @@
 class ArticleController < ApplicationController
     def index
+        #article.json?category=Swift+Docker
+        #article.json?category[]=Swift&category[]=Docker
+        #どちらでも可能
         categories = params['category'].split(" ")
         @articles = Category.joins(:articles)
                     .select("categories.category, articles.*")
