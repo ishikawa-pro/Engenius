@@ -1,6 +1,5 @@
 class ArticleController < ApplicationController
     def index
-        p params['category']
         categories = params['category'].split(" ")
         @articles = Category.joins(:articles)
                     .select("categories.category, articles.*")
