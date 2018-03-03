@@ -7,4 +7,4 @@ COPY ./engenius/Gemfile* ./
 RUN bundle install
 COPY ./engenius ./
 
-CMD ["./script/entrypoint.sh"]
+CMD ["rails", "s", "-b", "0.0.0.0"]
