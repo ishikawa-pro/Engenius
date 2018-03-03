@@ -25,5 +25,4 @@ test:
   database: engenius_test
 
 production:
-  <<: *default
-  database: engenius_production
+  url: <%= ENV['DATABASE_URL'] %>
