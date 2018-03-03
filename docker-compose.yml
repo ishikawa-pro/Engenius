@@ -14,7 +14,7 @@ services:
     container_name: EGPostgres
   web:
     build: .
-    image: 666552473144.dkr.ecr.ap-northeast-1.amazonaws.com/engenius/repo:latest
+    image: engenius:latest
     ports:
       - "3000:3000"
     env_file: .env
